@@ -95,7 +95,22 @@ describe("About Applying What We Have Learnt", function() {
 
     /* chain() together map(), flatten() and reduce() */
 
-    expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
+    
+
+    expect(ingredientCount['mushrooms']).toBe(
+        function () {
+          var mushroomCount = 0;
+          products.forEach(function (el){
+            if(el.ingredients.indexOf('mushrooms') > -1){
+              mushroomCount++;
+            }
+          });
+          return mushroomCount;
+        }
+
+          
+      );
+        }
   });
 
   /*********************************************************************************/
